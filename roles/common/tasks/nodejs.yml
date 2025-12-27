@@ -6,3 +6,14 @@
   ansible.builtin.dnf:
     name: nodejs
     state: present
+
+- name: include artifact_download task
+  ansible.builtin.include_tasks:
+    file: artifact_download.yml
+  
+- name: install node js dependencies
+  ansible.builtin.shell: npm install
+
+- name: include systemd_setup task
+  ansible.builtin.include_tasks:
+    file: systemd_setup.yml

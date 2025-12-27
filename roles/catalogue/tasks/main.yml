@@ -1,1 +1,17 @@
-- name: 
+- name: inclue common role nodejs
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs
+
+- name: copy mongodb repo file
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+  
+- name: install mongodb
+  ansible.builtin.dnf:
+    name: mongodb-mongosh
+    state: present
+
+- name: load master data
+  ansible.builtin.shell: mongosh --host mongodb-dev.kommanuthala.store </app/db/master-data.js
