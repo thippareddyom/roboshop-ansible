@@ -1,0 +1,11 @@
+# - name: sample
+#   hosts: all
+#   tasks:
+#     - name: print hello world
+#       ansible.builtin.debug:
+#         msg: Hello world
+
+- name: smaple
+  hosts: all
+  roles:
+    - demo
