@@ -5,8 +5,8 @@
 #       ansible.builtin.debug:
 #         msg: Hello world
 
-- name: smaple
+- name: Roboshop setup
   hosts: localhost
   connection: local
   roles:
-    - frontend
+    - {{ component_name }}
