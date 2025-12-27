@@ -1,5 +1,5 @@
 - name: Disable Nodejs and enable Nodejs 20
-  ansible.builtin.shell: dnf module disable nodejs -y ;dnf module enable nodejs:20 -y
+  ansible.builtin.shell: sudo dnf module disable nodejs -y ; sudo dnf module enable nodejs:20 -y
 
 - name: install nodejs
   ansible.builtin.dnf:
